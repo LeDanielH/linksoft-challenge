@@ -1,0 +1,9 @@
+@import "../../bower_components/normalize-scss/_normalize.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../../bower_components/bitters/app/assets/stylesheets/_base.scss";
+// @import "../../bower_components/font-awesome-sass/assets/stylesheets/font-awesome-sprockets";
+$fa-font-path: "fonts/font-awesome-sass/assets/fonts/font-awesome/";
+@import "../../bower_components/font-awesome-sass/assets/stylesheets/_font-awesome.scss";
+@import "my-styles/_0-my-styles.scss";
+
+

@@ -1,0 +1,29 @@
+{
+  "name": "linksoft-homework",
+  "description": "homework by Linksoft",
+  "main": "index.js",
+  "authors": [
+    "Daniel Hoksza"
+  ],
+  "license": "ISC",
+  "homepage": "ledanielh.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "normalize-scss": "^3.0.3",
+    "font-awesome-sass": "^4.6.1",
+    "bitters": "1.2.0",
+    "bourbon": "^4.2.7"
+  }
+}

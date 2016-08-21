@@ -1,0 +1,80 @@
+.choice-wrapper
+	+display(flex)
+	+flex-direction(column)
+	+justify-content(space-around)
+	margin-bottom: $small-spacing
+
+	.inline-check
+		+display(flex)
+		+align-items(center)
+		span
+			font-family: $font-content
+
+
+	// white-space: nowrap
+input[type="checkbox"]
+	+flex-shrink(0)
+	+position(relative, -6px null null null)
+	+transform(scale($base-scale))
+	
+.form-small
+	max-width: 320px
+
+.form-medium
+	max-width: 640px
+
+.plus-minus-button
+	padding: 2px 4px
+
+select
+	@extend input
+	option
+		width: 100%
+
+// .ng-invalid::before
+// 	content: "REQUIRED"
+input.ng-pristine, input.ng-dirty, input.ng-valid, input.ng-untouched
+	background-color: $base-transparent-light
+	
+input.ng-required, input.ng-invalid.ng-touched// when input box is edited
+	background-color: $error-color
+
+// input.ng-valid // when input box is edited
+// 	background-color: $success-color
+
+.error-message
+	text-align: right
+	margin-bottom: $base-spacing / 2
+	color: red
+	font-size: 0.8rem
+
+.field-xs
+	max-width: 50px
+
+.field-s
+	max-width: 70px
+
+.field-m
+	max-width: 90px
+
+.field-l
+	max-width: 150px
+
+.field-xl
+	max-width: 200px
+
+.field-xxl
+	max-width: 250px
+
+.circle-button
+	+display(flex)
+	+size(40px)
+	border-radius: 50%
+	+justify-content(center)
+	padding: $base-spacing / 3
+
+.small-label
+	text-indent: $small-spacing
+	white-space: nowrap
+	&:after
+		content: "\00a0\00a0"

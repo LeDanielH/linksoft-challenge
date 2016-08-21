@@ -1,0 +1,27 @@
+{
+	"title": "Subscribe!",
+
+	"name": {
+		"label": "Full Name",
+		"title": "Enter your name",
+		"placeholder": "Name",
+		"errorMessages": {
+			"required": "Must enter name.",
+			"invalid": "Please make sure your name does not contain nubmers, special characters or additional spaces."
+		}
+	},
+
+	"email": {
+		"label": "Email Address",
+		"title": "Enter your email.",
+		"placeholder": "Email",
+		"errorMessages": {
+			"required": "Must enter email.",
+			"invalid": "Please check your email again for unwanted additional spaces."
+		}
+	},
+	
+	"checkbox": {
+		"buttons": ["Windows", "Mac OS", "Linux"]
+	}
+}
