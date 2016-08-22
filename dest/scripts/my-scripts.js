@@ -30,20 +30,31 @@
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers', [])
-		.controller('IndexController', ['$scope', function($scope) {
+		.controller('IndexController', [
+			'$scope',
+			'sliderDataService',
+			function(
+				$scope,
+				sliderDataService
+				) {
 			$scope.greeting = 'Welcome!';
+			$scope.description = 'Homework for LINKSOFT';
 			$scope.appName = 'LINKSOFT APP';
+			$scope.slider = sliderDataService.slider.query();
 		}]);
 }());
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers')
 		.controller('HomeController', [
-			'$scope', 
+			'$scope',
+			'FormsDataService',
 			function(
-				$scope
+				$scope,
+				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
+				$scope.form = FormsDataService.formsData.query();
 		}]);
 }());
 

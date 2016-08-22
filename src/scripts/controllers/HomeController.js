@@ -2,10 +2,13 @@
 	'use strict';
 	angular.module('linksoftAppControllers')
 		.controller('HomeController', [
-			'$scope', 
+			'$scope',
+			'FormsDataService',
 			function(
-				$scope
+				$scope,
+				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
+				$scope.form = FormsDataService.formsData.query();
 		}]);
 }());

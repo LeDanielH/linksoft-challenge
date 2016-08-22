@@ -4,7 +4,7 @@ var vars = require('./vars'),
 	concat = require('gulp-concat'),
 	uglifyJs = require('gulp-uglify');
 
-gulp.task('process-js-libraries', function() {
+gulp.task('process-js-libraries', ['process-js-debug-libraries'] ,function() {
 	return gulp.src([
 		vars.jsLibraries.angular.min,
 		vars.jsLibraries.angularRoute.min,

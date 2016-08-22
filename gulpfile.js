@@ -18,6 +18,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', [
 	'process-html',
+	'process-js-libraries',
 	'process-styles',
 	'process-scripts',
 	'process-json',
