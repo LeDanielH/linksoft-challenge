@@ -29,19 +29,15 @@
 
 ;(function() {
 	'use strict';
-	angular.module('linksoftAppControllers', [])
-		.controller('IndexController', [
-			'$scope',
-			'sliderDataService',
-			function(
-				$scope,
-				sliderDataService
-				) {
-			$scope.greeting = 'Welcome!';
-			$scope.description = 'Homework for LINKSOFT';
-			$scope.appName = 'LINKSOFT APP';
-			$scope.slider = sliderDataService.slider.query();
-		}]);
+	angular.module('linksoftAppControllers', ['linksoftAppServices'])
+		.controller('IndexController', ['$scope','SliderDataService',
+			function($scope, SliderDataService) {
+				$scope.greeting = 'Welcome!';
+				$scope.description = 'Homework for LINKSOFT';
+				$scope.appName = 'LINKSOFT APP';
+				$scope.slider = SliderDataService.images.query();
+			}
+		]);
 }());
 ;(function() {
 	'use strict';
@@ -60,60 +56,62 @@
 
 ;(function() {
 	'use strict';
-	angular.module('linksoftAppServices', []);
+	angular.module('linksoftAppServices', ['ngResource']);
 }());
 ;(function() {
-    'use strict';
-    angular.module('linksoftAppServices')
-        .factory('FormsDataService', [
-            // '$rootScope',
-            '$resource',
-            function(
-                // $rootScope,
-                $resource
-            ) {
-                var f = {
-                    formsData: $resource('data/json/:itemId.json', {}, {
-                        query: {
-                            method: 'GET',
-                            params: {
-                                itemId: 'form'
-                            },
-                            isArray: false
-                        }
-                    }),
-                    patterns: {
-                        email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
-                        name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
-                    }
-                };
-                return f;
-            }
-        ]);
+	'use strict';
+	angular.module('linksoftAppServices')
+		.factory('FormsDataService', [
+			// '$rootScope',
+			'$resource',
+			function(
+				// $rootScope,
+				$resource
+			) {
+				var f = {
+					formsData: $resource('data/json/:itemId.json', {}, {
+						query: {
+							method: 'GET',
+							params: {
+								itemId: 'form'
+							},
+							isArray: false
+						}
+					}),
+					patterns: {
+						email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
+						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
+					}
+				};
+				return f;
+			}
+		]);
 }());
+
 ;(function () {
 	'use strict';
 	angular.module('linksoftAppServices')
 		.factory('SliderDataService', [
-            '$resource',
-            function (
+			'$resource',
+			function (
 				$resource
-            ) {
-				var images = {
+			) {
+				var im = {
 					images: $resource('data/json/:itemId.json', {}, {
 						query: {
 							method: 'GET',
 							params: {
-								itemId: 'images'
+								itemId: 'slider'
 							},
 							isArray: true
 						}
 					})
 				};
-				return images;
-            }
-        ]);
+				return im;
+			}
+		]);
 }());
+
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppDirectives', []);
@@ -138,19 +136,20 @@
 			return {
 				restrict: 'AE',
 				replace: true,
-				scope: {
-					images: '=',
-					delay: '=',
-					startwith: '='
-				},
+				// scope: {
+				// 	images: '=',
+				// 	delay: '=',
+				// 	startwith: '='
+				// },
 				link: function(scope, elem, attrs) {
-					
+
 				},
 
 				templateUrl: 'templates/directives/slider.html'
 			};
 		}]);
 }());
+
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppFilters', []);

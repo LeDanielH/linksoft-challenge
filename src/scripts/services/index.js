@@ -1,4 +1,4 @@
 ;(function() {
 	'use strict';
-	angular.module('linksoftAppServices', []);
+	angular.module('linksoftAppServices', ['ngResource']);
 }());
