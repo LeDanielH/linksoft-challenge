@@ -1,37 +1,12 @@
-// *
-// 	box-sizing: border-box
-
-// $max-element-width: 300px
-// $base-transition-duration: 500ms
-
-// body
-// 	+display(flex)
-// 	+flex-direction(column)
-// 	+align-items(center)
-// 	+padding(null $base-spacing)
-
-// 	.header
-// 		+position(relative)
-// 		+transform(translate3d(0, 0, 0))
-// 		width: 100%
-// 		+flex(1)
-
-// body > *
-// 	+display(flex)
-// 	max-width: 860px
-// 	padding: $base-spacing / 2
-
-// .container
-// 	+flex-wrap(wrap)
-
-// .container > *
-// 	+flex(1 1 $max-element-width)
-// 	margin: $base-spacing / 2
-
 .project
 	+display(flex)
 	+justify-content(center)
 
 	&__wrapper
-		max-width: 860px
+		width: 70vw
+		+padding(null $base-spacing/2 null)
 		padding: $base-spacing / 2
+
+	&__container
+		+display(flex)
+		+flex-wrap(wrap)

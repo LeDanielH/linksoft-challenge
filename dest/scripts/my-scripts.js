@@ -119,7 +119,7 @@
 ;(function () {
 	'use strict';
 	angular.module('linksoftAppDirectives')
-		.directive('signup', [function() {
+		.directive('subscribe', [function() {
 			return {
 				restrict: 'AE',
 				replace: true,
