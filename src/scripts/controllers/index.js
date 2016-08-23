@@ -3,14 +3,14 @@
 	angular.module('linksoftAppControllers', [])
 		.controller('IndexController', [
 			'$scope',
-			'sliderDataService',
+			'SliderDataService',
 			function(
 				$scope,
-				sliderDataService
+				SliderDataService
 				) {
 			$scope.greeting = 'Welcome!';
 			$scope.description = 'Homework for LINKSOFT';
 			$scope.appName = 'LINKSOFT APP';
-			$scope.slider = sliderDataService.slider.query();
+			$scope.slider = SliderDataService.images.query();
 		}]);
 }());

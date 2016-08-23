@@ -2,22 +2,22 @@
 	'use strict';
 	angular.module('linksoftAppServices')
 		.factory('SliderDataService', [
-            '$resource',
-            function (
+			'$resource',
+			function (
 				$resource
-            ) {
-				var images = {
+			) {
+				var im = {
 					images: $resource('data/json/:itemId.json', {}, {
 						query: {
 							method: 'GET',
 							params: {
-								itemId: 'images'
+								itemId: 'slider'
 							},
 							isArray: true
 						}
 					})
 				};
-				return images;
-            }
-        ]);
+				return im;
+			}
+		]);
 }());

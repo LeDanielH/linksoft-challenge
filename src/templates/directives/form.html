@@ -1,54 +1,39 @@
 <form method="POST" action="" class="subscribe" name="subscribeForm" ng-submit="subscribe">
 
 	<div class="subscribe__wrapper">
-		<label for="name">{{form.name.label}}</label>
-		<input type="text" id="name" name="name" autocomplete="name" 
-			ng-attr-title="{{form.name.title}}" 
-			placeholder="{{form.name.placeholder}}" 
+		<label class="subscribe__label" for="name">{{form.name.label}}</label>
+		<input class="subscribe__input" type="text" id="name" name="name" autocomplete="name"
+			ng-attr-title="{{form.name.title}}"
+			placeholder="{{form.name.placeholder}}"
 			ng-init="subscribeForm.name=form.name.placeholder"
 			ng-model="subscribe.name"
 			ng-required="true">
-		<p class="error-message" ng-show="subscribeForm.name.$touched && subscribeForm.name.$error.required ">
+		<p class="error" ng-show="subscribeForm.name.$touched && subscribeForm.name.$error.required ">
 			{{form.name.errorMessages.required}}
 		</p>
-		<p class="error-message" ng-show="subscribeForm.name.$touched && subscribeForm.name.$invalid
+		<p class="error" ng-show="subscribeForm.name.$touched && subscribeForm.name.$invalid
 			&& !subscribeForm.name.$pristine">
 			{{form.name.errorMessages.invalid}}
 		</p>
 	</div>
 
 	<div class="subscribe__wrapper">
-		<label for="email">{{form.email.label}}</label>
-		<input type="email" id="email" name="email" autocomplete="email" 
-			ng-attr-title="{{form.email.title}}" 
+		<label class="subscribe__label" for="email">{{form.email.label}}</label>
+		<input class="subscribe__input subscribe__input-email" type="email" id="email" name="email" autocomplete="email"
+			ng-attr-title="{{form.email.title}}"
 			placeholder="{{form.email.title}}"
 			ng-model="subscribe.email"
 			ng-required="true">
-		<p class="error-message" ng-show="subscribeForm.email.$touched && subscribeForm.email.$error.required">
+		<p class="subscribe__error" ng-show="subscribeForm.email.$touched && subscribeForm.email.$error.required">
 			{{form.email.errorMessages.required}}
 		</p>
-		<p class="error-message" ng-show="subscribeForm.email.$touched && subscribeForm.email.$invalid && !subscribeForm.email.$pristine">
-			{{form.email.errorMessages.invalid}}	
+		<p class="error" ng-show="subscribeForm.email.$touched && subscribeForm.email.$invalid && !subscribeForm.email.$pristine">
+			{{form.email.errorMessages.invalid}}
 		</p>
 	</div>
 
 	<div class="subscribe__wrapper">
-		<label for="email">{{form.email.label}}</label>
-		<input type="email" id="email" name="email" autocomplete="email" 
-			ng-attr-title="{{form.email.title}}" 
-			placeholder="{{form.email.title}}"
-			ng-model="subscribe.email"
-			ng-required="true">
-		<p class="error-message" ng-show="subscribeForm.email.$touched && subscribeForm.email.$error.required">
-			{{form.email.errorMessages.required}}
-		</p>
-		<p class="error-message" ng-show="subscribeForm.email.$touched && subscribeForm.email.$invalid && !subscribeForm.email.$pristine">
-			{{form.email.errorMessages.invalid}}	
-		</p>
-	</div>
-
-	<div class="subscribe__wrapper">
-		<input type="radio" ng-repeat="button in form.checkbox.buttons">
+		<input class="subscribe__input subscribe__input-radio" type="radio" ng-repeat="button in form.checkbox.buttons">
 	</div>
 
 	<div class="subscribe__wrapper">

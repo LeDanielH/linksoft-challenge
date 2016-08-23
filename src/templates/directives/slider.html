@@ -1,13 +1,13 @@
 <section class="slider">
-	<figure ng-repeat="image in images" class="slider__slide slider__slide-{{image.id}}"></figure>
+	<figure ng-repeat="image in slider" class="slider__slide slider__slide-{{image.id}}"></figure>
 	<div class="slider__controls">
 		<div class="slider__btn slider__btn-1">
-			<input type="radio" name="btn" value="one" checked="checked">
-			<label for="btn"></label>
+			<input type="radio" name="slider-control" value="one" checked="checked">
+			<label for="slider-control"></label>
 		</div>
 		<div class="slider__btn slider__btn-2">
-			<input type="radio" name="btn" value="one" checked="checked">
-			<label for="btn"></label>
+			<input type="radio" name="slider-control" value="two">
+			<label for="slider-control"></label>
 		</div>
 	</div>
 </section>

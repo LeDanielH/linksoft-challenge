@@ -10,26 +10,28 @@
 
 		<!-- PRODUCTION STYLES -->
 		<link rel="stylesheet" href="styles/main.min.css">
-		
+
 		<!--DEBUG STYLES -->
 		<!-- <link rel="stylesheet" href="styles/main.css"> -->
 	</head>
-	<body class="column">
-		<header class="header">
-			<slider></slider>
-		</header>
-		<section class="container" ng-view>
-			<!-- content -->
-		</section>
+	<body class="project">
+		<div class="project__wrapper">
+			<header class="project__header">
+				<slider></slider>
+			</header>
+			<section class="project__container" ng-view>
+				<!-- content -->
+			</section>
+		</div>
 
 		<!-- PRODUCTION SCRIPTS -->
 		<script src="scripts/libraries.min.js"></script>
 		<script src="scripts/my-scripts.min.js"></script>
-		
+
 		<!-- DEBUG SCRIPTS-->
 		<!-- <script src="scripts/libraries-debug.js"></script> -->
 		<!-- <script src="scripts/my-scripts.js"></script> -->
-		
+
 	</body>
 
 </html>
