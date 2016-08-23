@@ -2494,6 +2494,9 @@ img,picture {
 	width: 100%;
 	display: block;
 	overflow: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 .slider__slide-1 {
 	background-image: url("../data/images/img-1.jpg");
