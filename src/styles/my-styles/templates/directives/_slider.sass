@@ -3,14 +3,14 @@
 	+position(relative)
 
 	&__slide
-		+position(absolute, 0px 0px 0px 0px)
+		+position(absolute, 0)
 		margin: 0
 		+display(block)
 		overflow: hidden
 		background:
-            size: cover
-            repeat: no-repeat
-            position: center center
+			size: cover
+			repeat: no-repeat
+			position: center center
 
 		&-1
 			background-image: url('../data/images/img-1.jpg')
@@ -19,7 +19,19 @@
 			background-image: url('../data/images/img-2.jpg')
 
 	&__controls
-	 	+position(absolute, null null 0 50%)
-	 	+transform(translateX(-50%))
+		+position(absolute, null null 0 50%)
+		+transform(translateX(-50%))
 
+	&__btn
+		input[type="radio"]
+			display: none
+
+		input[type="radio"] + label
+			display:inline-block
+			+size(20px)
+			vertical-align: middle
+			background: $green
+			cursor:pointer
+
+		input[type="radio"]:checked + label
 

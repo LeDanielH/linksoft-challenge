@@ -20,8 +20,12 @@
 			"invalid": "Please check your email again for unwanted additional spaces."
 		}
 	},
-	
+
 	"checkbox": {
-		"buttons": ["Windows", "Mac OS", "Linux"]
+		"title": "Select your operating system",
+		"buttons": ["Windows", "Mac OS"],
+		"errorMessages": {
+			"required": "Must pick an operating system."
+		}
 	}
 }
