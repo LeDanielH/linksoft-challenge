@@ -423,6 +423,7 @@ td,th {
 	display: inline-block;
 	border-radius: 50%;
 	background-color: #fff;
+	cursor: pointer;
 }
 .slider__btn input[type="radio"]:checked + label:before {
 	height: 11px;
