@@ -13,12 +13,16 @@
         '$routeProvider',
         '$locationProvider',
         function(
-            $routeProvider, 
+            $routeProvider,
             $locationProvider) {
                 $routeProvider
                     .when('/home', {
                         templateUrl: 'templates/home.html',
                         controller: 'HomeController'
+                    })
+                    .when('/thankyou', {
+                        templateUrl: 'templates/thankyou.html',
+                        controller: 'ThankyouController'
                     })
                     .otherwise({
                         redirectTo: '/home'
