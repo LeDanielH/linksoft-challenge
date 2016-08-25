@@ -19,18 +19,21 @@
 			<header class="layout__header">
 				<slider></slider>
 			</header>
-			<section class="layout__container" ng-view>
-				<!-- content -->
+			<section class="layout__container">
+				<div class="layout__view" ng-view>
+					<!-- content -->
+				</div>
+				<article class="content" ng-include="template.url"></article>
 			</section>
 		</div>
 
 		<!-- PRODUCTION SCRIPTS -->
-		<script src="scripts/libraries.min.js"></script>
-		<script src="scripts/my-scripts.min.js"></script>
+		<!-- <script src="scripts/libraries.min.js"></script> -->
+		<!-- <script src="scripts/my-scripts.min.js"></script> -->
 
 		<!-- DEBUG SCRIPTS-->
-		<!-- <script src="scripts/libraries-debug.js"></script> -->
-		<!-- <script src="scripts/my-scripts.js"></script> -->
+		<script src="scripts/libraries-debug.js"></script>
+		<script src="scripts/my-scripts.js"></script>
 
 	</body>
 

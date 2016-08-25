@@ -261,6 +261,15 @@ td,th {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
+.layout__view {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+	-webkit-flex: 1 1 300px;
+	-moz-flex: 1 1 300px;
+	-ms-flex: 1 1 300px;
+	flex: 1 1 300px;
+}
 
 @media (max-width: 1025px) {
 
@@ -297,20 +306,12 @@ td,th {
 	line-height: 1.6;
 }
 .subscribe {
-	-webkit-box-flex: 1;
-	-moz-box-flex: 1;
-	box-flex: 1;
-	-webkit-flex: 1 1 300px;
-	-moz-flex: 1 1 300px;
-	-ms-flex: 1 1 300px;
-	flex: 1 1 300px;
 	padding: 1.3rem;
 	border-right: 1px solid #e8e8e8;
 	border-bottom: 1px solid #e8e8e8;
 	border-left: 1px solid #e8e8e8;
 	border-bottom-right-radius: 2px;
 	border-bottom-left-radius: 2px;
-	height: 0%;
 }
 .subscribe__heading {
 	color: #045fb8;

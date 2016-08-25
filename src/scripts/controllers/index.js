@@ -8,6 +8,10 @@
 				$scope.appName = 'LINKSOFT APP';
 				$scope.slider = SliderDataService.images.query();
 				$scope.selected = 1;
+				$scope.templates = [{
+					url: 'templates/content.html'
+				}];
+				$scope.template = $scope.templates[0];
 			}
 		]);
 }());

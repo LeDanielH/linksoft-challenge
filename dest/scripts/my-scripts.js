@@ -41,6 +41,10 @@
 				$scope.appName = 'LINKSOFT APP';
 				$scope.slider = SliderDataService.images.query();
 				$scope.selected = 1;
+				$scope.templates = [{
+					url: 'templates/content.html'
+				}];
+				$scope.template = $scope.templates[0];
 			}
 		]);
 }());
@@ -48,7 +52,7 @@
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers')
-		.controller('FormController', [
+		.controller('HomeController', [
 			'$scope',
 			// '$http',
 			'FormsDataService',
@@ -56,7 +60,9 @@
 				$scope,
 				// $http,
 				FormsDataService
-			) {
+				) {
+				$scope.greeting = 'Welcome Home';
+				$scope.form = FormsDataService.formsData.query();
 				$scope.subscriber = {};
 
 				$scope.processSubscriber = function() {
@@ -88,15 +94,16 @@
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers')
-		.controller('HomeController', [
+		.controller('ThankyouController', [
 			'$scope',
+			// '$http',
 			'FormsDataService',
 			function(
 				$scope,
+				// $http,
 				FormsDataService
 				) {
-				$scope.greeting = 'Welcome Home';
-				$scope.form = FormsDataService.formsData.query();
+
 		}]);
 }());
 
@@ -108,13 +115,9 @@
 	'use strict';
 	angular.module('linksoftAppServices')
 		.factory('FormsDataService', [
-			// '$rootScope',
 			'$resource',
-			'$http',
 			function(
-				// $rootScope,
-				$resource,
-				$http
+				$resource
 			) {
 				var f = {
 					formsData: $resource('data/json/:itemId.json', {}, {
@@ -129,16 +132,6 @@
 					patterns: {
 						email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
 						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
-					},
-
-					postFormData: function() {
-						console.log("posting data....");
-				        $http.post('http://www.plda.cz/Services/Test.asmx?op=AddDataToSpreadsheet',
-					    JSON.stringify(data)).success(function(){
-					    	console.log(data);
-					    });
-
-					    $http.post('/someUrl', data, config).then(successCallback, errorCallback);
 					}
 				};
 				return f;
@@ -174,26 +167,6 @@
 	'use strict';
 	angular.module('linksoftAppDirectives', []);
 }());
-;(function () {
-	'use strict';
-	angular.module('linksoftAppDirectives')
-		.directive('subscribe', [function() {
-			var controller = ['$scope', '$http', 'FormsDataService', function($scope, $http, FormsDataService) {
-
-			}];
-			return {
-				restrict: 'AE',
-				replace: true,
-				scope: {},
-				link: function(scope, elem, attrs) {
-
-				},
-				controller: FormController,
-				templateUrl: 'templates/directives/form.html'
-			};
-		}]);
-}());
-
 ;(function () {
 	'use strict';
 	angular.module('linksoftAppDirectives')
