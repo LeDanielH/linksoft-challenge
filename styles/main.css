@@ -414,6 +414,7 @@ td,th {
 	position: absolute;
 }
 .slider__btn input[type="radio"] + label:before {
+	cursor: pointer;
 	height: 19px;
 	width: 19px;
 	margin: 5px;
@@ -423,6 +424,7 @@ td,th {
 	background-color: #fff;
 }
 .slider__btn input[type="radio"]:checked + label:before {
+	cursor: pointer;
 	height: 11px;
 	width: 11px;
 	border: 4px solid #fff;
