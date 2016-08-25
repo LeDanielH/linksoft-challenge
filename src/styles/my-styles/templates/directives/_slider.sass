@@ -30,6 +30,7 @@
 			position: absolute
 
 		input[type="radio"] + label:before
+			cursor: pointer
 			+size(19px)
 			margin: 5px
 			content: " "
@@ -38,6 +39,7 @@
 			background-color: $c-background
 
 		input[type="radio"]:checked + label:before
+			cursor: pointer
 			+size(11px)
 			border: 4px solid $c-background
 			background-color: $green

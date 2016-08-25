@@ -211,9 +211,7 @@ td,th {
 }
 .layout__wrapper {
 	width: 70vw;
-	padding-right: 0.65rem;
-	padding-left: 0.65rem;
-	padding: 0.65rem;
+	padding: 0 1.3rem 1.3rem;
 }
 .layout__container {
 	display: -webkit-box;
@@ -414,6 +412,7 @@ td,th {
 	position: absolute;
 }
 .slider__btn input[type="radio"] + label:before {
+	cursor: pointer;
 	height: 19px;
 	width: 19px;
 	margin: 5px;
@@ -423,6 +422,7 @@ td,th {
 	background-color: #fff;
 }
 .slider__btn input[type="radio"]:checked + label:before {
+	cursor: pointer;
 	height: 11px;
 	width: 11px;
 	border: 4px solid #fff;
