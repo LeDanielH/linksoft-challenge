@@ -211,9 +211,7 @@ td,th {
 }
 .layout__wrapper {
 	width: 70vw;
-	padding-right: 0.65rem;
-	padding-left: 0.65rem;
-	padding: 0.65rem;
+	padding: 0 1.3rem 1.3rem;
 }
 .layout__container {
 	display: -webkit-box;
