@@ -16,16 +16,16 @@
             $routeProvider,
             $locationProvider) {
                 $routeProvider
-                    .when('/home', {
-                        templateUrl: 'templates/home.html',
-                        controller: 'HomeController'
+                    .when('/subscribe', {
+                        templateUrl: 'templates/subscribe.html',
+                        controller: 'SubscribeController'
                     })
                     .when('/thankyou', {
                         templateUrl: 'templates/thankyou.html',
                         controller: 'ThankyouController'
                     })
                     .otherwise({
-                        redirectTo: '/home'
+                        redirectTo: '/subscribe'
                     });
             }
     ]);
@@ -52,13 +52,11 @@
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers')
-		.controller('HomeController', [
+		.controller('SubscribeController', [
 			'$scope',
-			// '$http',
 			'FormsDataService',
 			function(
 				$scope,
-				// $http,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
@@ -186,15 +184,6 @@
 			return {
 				restrict: 'AE',
 				replace: true,
-				// scope: {
-				// 	images: '=',
-				// 	delay: '=',
-				// 	startwith: '='
-				// },
-				link: function(scope, elem, attrs) {
-
-				},
-
 				templateUrl: 'templates/directives/slider.html'
 			};
 		}]);

@@ -6,7 +6,7 @@
 			ng-attr-title="{{form.name.title}}"
 			placeholder="{{form.name.placeholder}}"
 			ng-init="subscribeForm.name=form.name.placeholder"
-			ng-model="name"
+			ng-model="subscriber.name"
 			ng-required="true">
 		<small class="subscribe__error"
 			ng-show="subscribeForm.name.$touched && subscribeForm.name.$error.required ">
@@ -23,7 +23,7 @@
 		<input class="subscribe__input subscribe__input-email" type="email" id="email" name="email" autocomplete="email"
 			ng-attr-title="{{form.email.title}}"
 			placeholder="{{form.email.placeholder}}"
-			ng-model="email"
+			ng-model="subscriber.email"
 			ng-required="true">
 		<small class="subscribe__error" ng-show="subscribeForm.email.$touched && subscribeForm.email.$error.required">
 			{{form.email.errorMessages.required}}
@@ -37,7 +37,7 @@
 		<span class="subscribe__wrapper-radio" ng-repeat="button in form.checkbox.buttons">
 			<input class="subscribe__input subscribe__input-radio" type="radio" name="platform-picker" value="{{button}}"
 				ng-attr-title="{{form.checkbox.title}}"
-				ng-model="platform.button"
+				ng-model="subscriber.platform"
 				ng-required="true">
 			<small>{{button}}</small>
 		</span>
@@ -49,7 +49,10 @@
 	<button class="subscribe__button btn" type="submit" ng-disabled="subscribeForm.$invalid" ng-model="dataFilled">Submit</button>
 </form>
 
-<!-- <pre>
+<br><br>
+
+<small><em>FOR TESTING PURPOSES</em></small>
+<pre style="max-width: 300px">
     {{ subscriber }}
 </pre>
- -->
+

@@ -1,13 +1,11 @@
 ;(function() {
 	'use strict';
 	angular.module('linksoftAppControllers')
-		.controller('HomeController', [
+		.controller('SubscribeController', [
 			'$scope',
-			// '$http',
 			'FormsDataService',
 			function(
 				$scope,
-				// $http,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
