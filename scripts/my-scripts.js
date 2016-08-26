@@ -55,10 +55,12 @@
 		.controller('SubscribeController', [
 			'$scope',
 			'$location',
+			'$http',
 			'FormsDataService',
 			function(
 				$scope,
 				$location,
+				$http,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
@@ -73,7 +75,32 @@
 							email: $scope.subscriber.email,
 							platform: $scope.subscriber.platform
 						};
-						console.log('You have successfullly subscribed to our newsletter', $scope.subscriber);
+						console.log('You have successfullly submitted your data', $scope.subscriber);
+
+						var url = 'http://www.plda.cz/Services/Test.asmx?op=AddDataToSpreadsheet';
+						var data = $scope.subscriber;
+						var config = {
+							headers : {
+								'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+								'Access-Control-Allow-Origin': '*'
+							}
+						};
+
+						$http
+							.post(url, data, config)
+							.then(
+								function(response) {
+									var data = response.data;
+									$location.path('/thankyou');
+								}, function(error) {
+									var data = error.data;
+									console.log('Data could not be posted');
+								});
+
+						/*
+							the code below is here to fake what happens when user submits the form,
+							will remove it when posting data to a server works
+						*/
 						$location.path('/thankyou');
 					} else {
 						console.log('Something went wrong. Please try again.');
