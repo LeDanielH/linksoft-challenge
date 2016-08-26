@@ -4,10 +4,12 @@
 		.controller('SubscribeController', [
 			'$scope',
 			'$location',
+			'$http',
 			'FormsDataService',
 			function(
 				$scope,
 				$location,
+				$http,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
@@ -22,8 +24,30 @@
 							email: $scope.subscriber.email,
 							platform: $scope.subscriber.platform
 						};
-						console.log('You have successfullly subscribed to our newsletter', $scope.subscriber);
-						$location.path('/thankyou');
+						console.log('You have successfullly submitted your data', $scope.subscriber);
+
+						var url = 'http://www.plda.cz/Services/Test.asmx?op=AddDataToSpreadsheet';
+						var data = $scope.subscriber;
+						var config = {
+							headers : {
+								'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+								'Access-Control-Allow-Origin': '*'
+							}
+						};
+
+						$http
+							.post(url, data, config)
+							.then(
+								function(response) {
+									var data = response.data;
+									$location.path('/thankyou');
+								}, function(error) {
+									var data = error.data;
+									console.log('Data could not be posted');
+								});
+
+
+						// $location.path('/thankyou');
 					} else {
 						console.log('Something went wrong. Please try again.');
 					}
