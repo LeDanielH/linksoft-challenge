@@ -23,7 +23,7 @@
 						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
 					},
 					go: function (path) {
-						$location.path(path);
+						return $location.path(path);
 					}
 				};
 				return f;
