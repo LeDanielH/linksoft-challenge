@@ -191,6 +191,38 @@ td,th {
 * {
 	box-sizing: border-box;
 }
+.btn {
+	appearance: none;
+	background-color: #045fb8;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.95rem;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 600;
+	line-height: 1;
+	padding: 0.86667rem 1.3rem;
+	text-decoration: none;
+	-webkit-transition: background-color 300ms ease;
+	-moz-transition: background-color 300ms ease;
+	transition: background-color 300ms ease;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.btn:hover,.btn:focus {
+	background-color: #034c93;
+	color: #fff;
+}
+.btn:hover:disabled,.btn:focus:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+.btn:hover:disabled:hover,.btn:focus:disabled:hover {
+	background-color: #045fb8;
+}
 .layout {
 	display: -webkit-box;
 	display: -moz-box;
@@ -229,6 +261,15 @@ td,th {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
+.layout__view {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+	-webkit-flex: 1 1 300px;
+	-moz-flex: 1 1 300px;
+	-ms-flex: 1 1 300px;
+	flex: 1 1 300px;
+}
 
 @media (max-width: 1025px) {
 
@@ -265,20 +306,12 @@ td,th {
 	line-height: 1.6;
 }
 .subscribe {
-	-webkit-box-flex: 1;
-	-moz-box-flex: 1;
-	box-flex: 1;
-	-webkit-flex: 1 1 300px;
-	-moz-flex: 1 1 300px;
-	-ms-flex: 1 1 300px;
-	flex: 1 1 300px;
 	padding: 1.3rem;
 	border-right: 1px solid #e8e8e8;
 	border-bottom: 1px solid #e8e8e8;
 	border-left: 1px solid #e8e8e8;
 	border-bottom-right-radius: 2px;
 	border-bottom-left-radius: 2px;
-	height: 0%;
 }
 .subscribe__heading {
 	color: #045fb8;
@@ -337,38 +370,6 @@ td,th {
 }
 .subscribe__error {
 	float: right;
-}
-.subscribe__button {
-	appearance: none;
-	background-color: #045fb8;
-	border: 0;
-	border-radius: 2px;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 0.95rem;
-	-webkit-font-smoothing: antialiased;
-	font-weight: 600;
-	line-height: 1;
-	padding: 0.86667rem 1.3rem;
-	text-decoration: none;
-	-webkit-transition: background-color 300ms ease;
-	-moz-transition: background-color 300ms ease;
-	transition: background-color 300ms ease;
-	user-select: none;
-	vertical-align: middle;
-	white-space: nowrap;
-}
-.subscribe__button:hover,.subscribe__button:focus {
-	background-color: #034c93;
-	color: #fff;
-}
-.subscribe__button:disabled {
-	cursor: not-allowed;
-	opacity: 0.5;
-}
-.subscribe__button:disabled:hover {
-	background-color: #045fb8;
 }
 .slider {
 	height: 26vw;
