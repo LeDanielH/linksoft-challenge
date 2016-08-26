@@ -63,7 +63,6 @@
 				) {
 				$scope.greeting = 'Welcome Home';
 				$scope.form = FormsDataService.formsData.query();
-				$scope.patterns = FormsDataService.patterns;
 				$scope.subscriber = {};
 
 				$scope.processSubscriber = function() {
@@ -128,15 +127,7 @@
 							},
 							isArray: false
 						}
-					}),
-					/* THIS IS OBVIOUSLY WRONG:) */
-					patterns: {
-						email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
-						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){1,4}$/"
-					},
-					go: function (path) {
-						return $location.path(path);
-					}
+					})
 				};
 				return f;
 			}
