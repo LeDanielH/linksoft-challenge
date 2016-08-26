@@ -7,7 +7,8 @@
 			placeholder="{{form.name.placeholder}}"
 			ng-init="subscribeForm.name=form.name.placeholder"
 			ng-model="subscriber.name"
-			ng-required="true">
+			ng-required="true"
+			ng-pattern="/^(\b[a-zA-Z]{1,20}\b\s{0,2}){1,4}$/">
 		<small class="subscribe__error"
 			ng-show="subscribeForm.name.$touched && subscribeForm.name.$error.required ">
 			{{form.name.errorMessages.required}}
@@ -24,7 +25,8 @@
 			ng-attr-title="{{form.email.title}}"
 			placeholder="{{form.email.placeholder}}"
 			ng-model="subscriber.email"
-			ng-required="true">
+			ng-required="true"
+			ng-pattern="/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/">
 		<small class="subscribe__error" ng-show="subscribeForm.email.$touched && subscribeForm.email.$error.required">
 			{{form.email.errorMessages.required}}
 		</small>

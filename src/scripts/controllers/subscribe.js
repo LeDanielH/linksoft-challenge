@@ -12,6 +12,7 @@
 				) {
 				$scope.greeting = 'Welcome Home';
 				$scope.form = FormsDataService.formsData.query();
+				$scope.patterns = FormsDataService.patterns;
 				$scope.subscriber = {};
 
 				$scope.processSubscriber = function() {

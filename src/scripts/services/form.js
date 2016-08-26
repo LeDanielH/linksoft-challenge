@@ -18,9 +18,10 @@
 							isArray: false
 						}
 					}),
+					/* THIS IS OBVIOUSLY WRONG:) */
 					patterns: {
 						email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
-						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
+						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){1,4}$/"
 					},
 					go: function (path) {
 						return $location.path(path);
