@@ -46,8 +46,11 @@
 									console.log('Data could not be posted');
 								});
 
-
-						// $location.path('/thankyou');
+						/*
+							the code below is here to fake what happens when user submits the form,
+							will remove it when posting data to a server works
+						*/
+						$location.path('/thankyou');
 					} else {
 						console.log('Something went wrong. Please try again.');
 					}
