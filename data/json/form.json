@@ -17,7 +17,7 @@
 		"placeholder": "Email",
 		"errorMessages": {
 			"required": "Must enter email.",
-			"invalid": "Please check your email again for unwanted additional spaces."
+			"invalid": "Please make sure your email is in valid format or it doesn't have any additional spaces."
 		}
 	},
 

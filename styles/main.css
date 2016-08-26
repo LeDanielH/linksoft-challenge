@@ -313,15 +313,6 @@ td,th {
 	display: -moz-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-moz-box-pack: center;
-	box-pack: center;
-	-webkit-justify-content: center;
-	-moz-justify-content: center;
-	-ms-justify-content: center;
-	-o-justify-content: center;
-	justify-content: center;
-	-ms-flex-pack: center;
 	-webkit-box-orient: vertical;
 	-moz-box-orient: vertical;
 	box-orient: vertical;
@@ -332,6 +323,15 @@ td,th {
 	-moz-flex-direction: column;
 	flex-direction: column;
 	-ms-flex-direction: column;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	box-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+	-ms-flex-pack: center;
 	-webkit-box-align: center;
 	-moz-box-align: center;
 	box-align: center;
@@ -341,9 +341,19 @@ td,th {
 	-o-align-items: center;
 	align-items: center;
 	-ms-flex-align: center;
+	padding: 1.3rem;
+	border-right: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
 }
 .thankyou__heading {
 	text-align: center;
+	color: #333;
+	font-size: 2rem;
+	line-height: 1.2;
+	font-weight: 400;
 }
 .subscribe {
 	padding: 1.3rem;
@@ -410,6 +420,7 @@ td,th {
 }
 .subscribe__error {
 	float: right;
+	margin-bottom: 1.3rem;
 }
 .slider {
 	height: 26vw;
