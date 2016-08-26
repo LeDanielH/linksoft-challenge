@@ -315,6 +315,7 @@ td,th {
 	border-left: 1px solid #e8e8e8;
 	border-bottom-right-radius: 2px;
 	border-bottom-left-radius: 2px;
+	margin-bottom: 1.3rem;
 }
 .subscribe__heading {
 	color: #045fb8;
@@ -422,6 +423,7 @@ td,th {
 }
 .thankyou__heading {
 	text-align: center;
+	margin-top: 0;
 	color: #333;
 	font-size: 2rem;
 	line-height: 1.2;
