@@ -23,7 +23,6 @@
     "angular-resource": "^1.5.5",
     "normalize-scss": "^3.0.3",
     "font-awesome-sass": "^4.6.1",
-    "bitters": "1.2.0",
     "bourbon": "^4.2.7"
   }
 }
