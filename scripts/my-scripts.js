@@ -1,34 +1,34 @@
 ;(function() {
-    'use strict';
-    angular.module('linksoftApp', [
-        'ngRoute',
-        'ngSanitize',
-        'ngAnimate',
-        'linksoftAppControllers',
-        'linksoftAppServices',
-        'linksoftAppFilters',
-        'linksoftAppDirectives',
-        'linksoftAppAnimations'
-    ]).config([
-        '$routeProvider',
-        '$locationProvider',
-        function(
-            $routeProvider,
-            $locationProvider) {
-                $routeProvider
-                    .when('/subscribe', {
-                        templateUrl: 'templates/subscribe.html',
-                        controller: 'SubscribeController'
-                    })
-                    .when('/thankyou', {
-                        templateUrl: 'templates/thankyou.html',
-                        controller: 'ThankyouController'
-                    })
-                    .otherwise({
-                        redirectTo: '/subscribe'
-                    });
-            }
-    ]);
+	'use strict';
+	angular.module('linksoftApp', [
+		'ngRoute',
+		'ngSanitize',
+		'ngAnimate',
+		'linksoftAppControllers',
+		'linksoftAppServices',
+		'linksoftAppFilters',
+		'linksoftAppDirectives',
+		'linksoftAppAnimations'
+	]).config([
+		'$routeProvider',
+		'$locationProvider',
+		function(
+			$routeProvider,
+			$locationProvider) {
+				$routeProvider
+					.when('/subscribe', {
+						templateUrl: 'templates/subscribe.html',
+						controller: 'SubscribeController'
+					})
+					.when('/thankyou', {
+						templateUrl: 'templates/thankyou.html',
+						controller: 'ThankyouController'
+					})
+					.otherwise({
+						redirectTo: '/subscribe'
+					});
+			}
+	]);
 }());
 
 ;(function() {
@@ -54,9 +54,11 @@
 	angular.module('linksoftAppControllers')
 		.controller('SubscribeController', [
 			'$scope',
+			'$location',
 			'FormsDataService',
 			function(
 				$scope,
+				$location,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
@@ -71,7 +73,8 @@
 							email: $scope.subscriber.email,
 							platform: $scope.subscriber.platform
 						};
-						console.log('You have successfullly subscribed to our newsletter');
+						console.log('You have successfullly subscribed to our newsletter', $scope.subscriber);
+						$location.path('/thankyou');
 					} else {
 						console.log('Something went wrong. Please try again.');
 					}
@@ -95,14 +98,14 @@
 	angular.module('linksoftAppControllers')
 		.controller('ThankyouController', [
 			'$scope',
-			// '$http',
+			'$location',
 			'FormsDataService',
 			function(
 				$scope,
-				// $http,
+				$location,
 				FormsDataService
 				) {
-
+				$scope.go = FormsDataService.go();
 		}]);
 }());
 
@@ -115,8 +118,10 @@
 	angular.module('linksoftAppServices')
 		.factory('FormsDataService', [
 			'$resource',
+			'$location',
 			function(
-				$resource
+				$resource,
+				$location
 			) {
 				var f = {
 					formsData: $resource('data/json/:itemId.json', {}, {
@@ -131,6 +136,9 @@
 					patterns: {
 						email: "/^\b\w{1,30}\b(\.\b\w{1,30}\b)?@\b[a-zA-Z0-9]{1,30}\b\.\b[a-zA-Z]{1,10}\b(\.\b[a-zA-Z]{1,10}\b)?(\s)?$/",
 						name: "/^(\b[a-zA-Z]{1,20}\b\s{0,2}){2,4}$/"
+					},
+					go: function (path) {
+						$location.path(path);
 					}
 				};
 				return f;
