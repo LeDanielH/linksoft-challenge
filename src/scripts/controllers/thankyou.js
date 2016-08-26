@@ -3,13 +3,13 @@
 	angular.module('linksoftAppControllers')
 		.controller('ThankyouController', [
 			'$scope',
-			// '$http',
+			'$location',
 			'FormsDataService',
 			function(
 				$scope,
-				// $http,
+				$location,
 				FormsDataService
 				) {
-
+				$scope.go = FormsDataService.go();
 		}]);
 }());

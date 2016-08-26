@@ -3,9 +3,11 @@
 	angular.module('linksoftAppControllers')
 		.controller('SubscribeController', [
 			'$scope',
+			'$location',
 			'FormsDataService',
 			function(
 				$scope,
+				$location,
 				FormsDataService
 				) {
 				$scope.greeting = 'Welcome Home';
@@ -20,7 +22,8 @@
 							email: $scope.subscriber.email,
 							platform: $scope.subscriber.platform
 						};
-						console.log('You have successfullly subscribed to our newsletter');
+						console.log('You have successfullly subscribed to our newsletter', $scope.subscriber);
+						$location.path('/thankyou');
 					} else {
 						console.log('Something went wrong. Please try again.');
 					}
