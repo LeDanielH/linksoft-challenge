@@ -379,6 +379,7 @@ td,th {
 	color: crimson;
 }
 .thankyou {
+	height: 300px;
 	display: -webkit-box;
 	display: -moz-box;
 	display: box;
@@ -425,9 +426,11 @@ td,th {
 	text-align: center;
 	margin-top: 0;
 	color: #333;
-	font-size: 2rem;
+	font-size: 1.6rem;
 	line-height: 1.2;
 	font-weight: 400;
+	display: block;
+	width: 200px;
 }
 .slider {
 	height: 26vw;
