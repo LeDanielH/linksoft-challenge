@@ -64,15 +64,16 @@
 				$scope.subscriber = {};
 
 				$scope.processSubscriber = function() {
+					console.log('processing subscriber');
 					if ($scope.subscribeForm.$valid) {
-						$scope.subscriber.push({
-							name: $scope.name,
-							email: $scope.email,
-							platform: $scope.platform
-						});
-						alert('You have successfullly subscribed to our newsletter');
+						$scope.subscriber = {
+							name: $scope.subscriber.name,
+							email: $scope.subscriber.email,
+							platform: $scope.subscriber.platform
+						};
+						console.log('You have successfullly subscribed to our newsletter');
 					} else {
-						alert('Something went wrong. Please try again.');
+						console.log('Something went wrong. Please try again.');
 					}
 				};
 
