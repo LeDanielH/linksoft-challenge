@@ -212,6 +212,9 @@ td,th {
 	vertical-align: middle;
 	white-space: nowrap;
 }
+.btn:disabled {
+	opacity: 0.5;
+}
 .btn:hover,.btn:focus {
 	background-color: #034c93;
 	color: #fff;
