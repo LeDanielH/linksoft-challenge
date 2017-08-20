@@ -1,4 +1,4 @@
-##Linksoft challenge
+## Linksoft challenge
 
 + work folder: *__src__*
 + distribution folder: *__dest__*
